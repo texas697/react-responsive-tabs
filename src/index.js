@@ -67,7 +67,7 @@ export default class Tabs extends Component {
     );
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     const { blockWidth } = this.state;
     if (!blockWidth) {
       this.setTabsDimensions();
