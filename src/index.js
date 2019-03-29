@@ -72,7 +72,14 @@ export default class Tabs extends Component {
     if (!blockWidth) {
       this.setTabsDimensions();
     }
+    if (prevProps.selectedTabKey !== this.props.selectedTabKey && this.props.selectedTabKey === 0) {
+      this.onResetTab();
+    }
   }
+
+  onResetTab = () => {
+    this.setState({ selectedTabKey: 0 });
+  };
 
   onResize = () => {
     if (this.tabsWrapper) {
